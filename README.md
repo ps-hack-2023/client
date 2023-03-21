@@ -20,6 +20,8 @@ The process is very difficult, you need to run:
 # usage
 This step is extremely difficult, please run:
 `npm start`
+You may need to run this before if it doesnt work:
+`export NODE_OPTIONS=--openssl-legacy-provider`
 
 # development
 
