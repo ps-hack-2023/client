@@ -1,13 +1,27 @@
-import { hot } from 'react-hot-loader'
-import React from 'react'
-import './App.css'
+import React from "react";
+import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./pages/home";
+import Page1 from "./pages/Page1";
+import Page2 from "./pages/Page2";
+import { Route, Routes } from "react-router-dom";
 
-const message = 'Welcome to proj'
+const message = "Welcome to proje, bar looks bad dont bully me";
 
-const App = () => (
-  <div className='App'>
-    <h1>{message}</h1>
-  </div>
-)
+const App = () => {
+  
+  return (
+    <div className="App">
+      <Navbar />
+      <div className="page-container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/page1" element={<Page1 />} />
+          <Route path="/page2" element={<Page2 />} />
+        </Routes>
+      </div>
+    </div>
+  );
+};
 
-export default hot(module)(App)
+export default App;
