@@ -2,7 +2,7 @@ import { hot } from 'react-hot-loader'
 import React from 'react'
 import './App.css'
 
-const message = 'Welcome to proj'
+const message = 'Welcome to proj 0.0.1'
 
 const App = () => (
   <div className='App'>
