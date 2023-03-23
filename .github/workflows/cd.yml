@@ -1,0 +1,46 @@
+name: Deploy Tag (CD)
+
+on:
+  create:
+    tags:
+      - v*
+
+jobs:
+  deploy-latest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execute rollout script 
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: 130.162.175.115
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASS }}
+          port: 22
+          script: |
+            echo "----> check connection works"
+            whoami
+
+            cd ps-hack-23
+
+            echo "----> remove old deploy code"
+            rm -rf *
+            rm -rf .*
+
+            echo "----> pull in new deploy code"
+            git clone https://${{ secrets.DEPLOY_TOKEN  }}:@github.com/ps-hack-2023/orchestration .
+
+            echo "----> re-create updated image "
+            GITHUB_TOKEN=${{ secrets.DEPLOY_TOKEN }} BACKEND_TAG="${{ github.ref_name }}" docker compose up -d --force-recreate --no-deps --build nginx
+            
+            echo "----> remove unused images "
+            docker image prune -f
+
+            echo "----> wait for containers to be up"
+            TIME_SO_FAR=0
+            SLEEP_TIME=1
+            until [ $TIME_SO_FAR -eq 120 ] || (curl --silent --show-error --fail -L localhost:8880); do
+              let "TIME_SO_FAR=TIME_SO_FAR+SLEEP_TIME"
+              echo "----> waiting for startup"
+              sleep $SLEEP_TIME
+            done
+            echo "----> Success!"
