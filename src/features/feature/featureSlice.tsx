@@ -9,10 +9,13 @@ const featureSlice = createSlice({
   name: 'feature',
   initialState,
   reducers: {
-    log (state) {
-      console.log(state.message)
+    logMessage: (state, payload) => {
+      console.log(state.message + ' AAA ' + payload.payload)
+      state.message = 'New message'
     }
   }
 })
+
+export const { logMessage } = featureSlice.actions
 
 export default featureSlice.reducer
