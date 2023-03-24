@@ -6,7 +6,7 @@ import Page1 from "./pages/Page1";
 import Page2 from "./pages/Page2";
 import { Route, Routes } from "react-router-dom";
 
-const message = "Welcome to proje, bar looks bad dont bully me";
+const message = "Welcome to proje, bar looks bad dont bully me v0.0.1";
 
 const App = () => {
   

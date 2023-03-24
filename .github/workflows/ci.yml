@@ -9,7 +9,7 @@ on:
       - main
       
 jobs:
-  build:
+  test:
     # Defines the type of runner the job runs on
     runs-on: ubuntu-latest
     
