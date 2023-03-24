@@ -1,38 +1,38 @@
-import * as React from "react"
+import "@fontsource/raleway/400.css";
+import React from 'react';
+import { NavBar } from "./NavBar";
+import { Footer } from "./Footer";
+import { Hero } from "./Hero";
+import { Main_content } from "./Main_content";
 import {
   ChakraProvider,
   Box,
+  Badge,
+  Flex,
+  Avatar,
   Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
+  Stack,
+  Button,
+  SkeletonCircle,
+  SkeletonText,
+  Select,
   theme,
-} from "@chakra-ui/react"
-import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import { Logo } from "./Logo"
+  Grid,
+  GridItem,
+} from "@chakra-ui/react";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
-    <Box textAlign="center" fontSize="xl">
-      <Grid minH="100vh" p={3}>
-        <ColorModeSwitcher justifySelf="flex-end" />
-        <VStack spacing={8}>
-          <Logo h="40vmin" pointerEvents="none" />
-          <Text>
-            Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
-          </Text>
-          <Link
-            color="teal.500"
-            href="https://chakra-ui.com"
-            fontSize="2xl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn Chakra
-          </Link>
-        </VStack>
-      </Grid>
-    </Box>
+    <Grid templateColumns="repeat(6)">
+      <GridItem colSpan={6} bg="grey.100">
+        <NavBar></NavBar>
+      </GridItem>
+      <GridItem colSpan={6} bg="grey.200">
+        <Main_content></Main_content>
+      </GridItem>
+      <GridItem colSpan={6} bg="grey.200">
+        <Footer></Footer>
+      </GridItem>
+    </Grid>
   </ChakraProvider>
-)
+);
