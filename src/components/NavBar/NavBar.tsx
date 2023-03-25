@@ -12,8 +12,12 @@ import { IoMdCart } from "react-icons/io";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import navBarItems from "./navBarItems.json";
 import "./navBarStyles.css";
+import { useSelector } from "react-redux";
 
 const NavBar = () => {
+  const {cartPrice} = useSelector((store: any) => store.cart)
+  const formattedPrice = (Math.round(cartPrice * 100) / 100).toFixed(2);
+
   const LinkComponent = ({
     to,
     children,
@@ -83,8 +87,7 @@ const NavBar = () => {
           colorScheme="green"
           height="38px"
         >
-          {" "}
-          £0.00
+          £{formattedPrice}
         </Button>
       </Stack>
       <Stack
