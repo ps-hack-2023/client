@@ -1,0 +1,18 @@
+[
+  {
+    "label": "Groceries",
+    "href": "/groceries"
+  },
+  {
+    "label": "Recipes",
+    "href": "/recipes"
+  },
+  {
+    "label": "Loyalty Program",
+    "href": "/loyalty-program"
+  },
+  {
+    "label": "Food Labels",
+    "href": "/food-labels"
+  }
+]

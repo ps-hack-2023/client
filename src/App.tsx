@@ -1,6 +1,6 @@
 import "@fontsource/raleway/400.css";
 import React from 'react';
-import { NavBar } from "./components/NavBar";
+import NavBar from "./components/NavBar/NavBar";
 import { Footer } from "./components/Footer";
 import { Main_content } from "./pages/Main_content";
 import {
