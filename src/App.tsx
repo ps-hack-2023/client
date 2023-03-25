@@ -2,7 +2,6 @@ import "@fontsource/raleway/400.css";
 import React from 'react';
 import { NavBar } from "./NavBar";
 import { Footer } from "./Footer";
-import { Hero } from "./Hero";
 import { Main_content } from "./Main_content";
 import {
   ChakraProvider,
@@ -25,13 +24,13 @@ export const App = () => (
   <ChakraProvider theme={theme}>
     <Grid templateColumns="repeat(6)">
       <GridItem colSpan={6} bg="grey.100">
-        <NavBar></NavBar>
+        <NavBar />
       </GridItem>
       <GridItem colSpan={6} bg="grey.200">
-        <Main_content></Main_content>
+        <Main_content />
       </GridItem>
       <GridItem colSpan={6} bg="grey.200">
-        <Footer></Footer>
+        <Footer />
       </GridItem>
     </Grid>
   </ChakraProvider>
