@@ -5,20 +5,11 @@ import { Footer } from "./components/Footer";
 import { Main_content } from "./pages/Main_content";
 import {
   ChakraProvider,
-  Box,
-  Badge,
-  Flex,
-  Avatar,
-  Text,
-  Stack,
-  Button,
-  SkeletonCircle,
-  SkeletonText,
-  Select,
   theme,
   Grid,
   GridItem,
 } from "@chakra-ui/react";
+import { Route, Routes } from "react-router-dom";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
@@ -27,7 +18,9 @@ export const App = () => (
         <NavBar />
       </GridItem>
       <GridItem colSpan={6} bg="grey.200">
-        <Main_content />
+        <Routes>
+          <Route path='/' element={<Main_content />} />
+        </Routes>
       </GridItem>
       <GridItem colSpan={6} bg="grey.200">
         <Footer />
