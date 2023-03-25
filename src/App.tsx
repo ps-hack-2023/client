@@ -1,8 +1,8 @@
 import "@fontsource/raleway/400.css";
 import React from 'react';
-import { NavBar } from "./NavBar";
+import { NavBar } from "./components/NavBar";
 import { Footer } from "./components/Footer";
-import { Main_content } from "./Main_content";
+import { Main_content } from "./pages/Main_content";
 import {
   ChakraProvider,
   Box,
