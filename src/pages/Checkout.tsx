@@ -1,4 +1,4 @@
-import React from "react";
+import {useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Stack, Text, Button } from "@chakra-ui/react";
 import CheckoutCard from "../components/CheckoutCard/CheckoutCard";
@@ -12,17 +12,38 @@ const Checkout = () => {
   );
   const formattedPrice = (Math.round(cartPrice * 100) / 100).toFixed(2);
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
+
+  const handleCheckout = () => {
+    setLoading(true);
+    sendEmail({
+        cost: `£${formattedPrice}`,
+        prevPoints: "1,620",
+        newPoints: `${
+          Math.floor(cartPrice) + Math.floor(loyaltyPoints)
+        }`,
+        envPoints: `${Math.floor(loyaltyPoints)}`,
+        newTotal: `${(
+          1620 +
+          (Math.floor(cartPrice) + Math.floor(loyaltyPoints))
+        )
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
+      })
+  }
 
   const sendEmail = (params: any) => {
     emailjs
       .send("service_dtcbvhy", "template_itzoj8a", params, "4-xGrZKKpvjQQC3s8")
       .then((res) => {
+        setLoading(false);
         dispatch(emptyCart());
       })
       .catch((err) => {
         console.log("EMAIL FAILED");
       });
   };
+
 
   return (
     <Stack justify="flex-start" align="flex-start" spacing="25px">
@@ -192,24 +213,13 @@ const Checkout = () => {
                   </Stack>
                 </Stack>
                 <Button
+                    isLoading={loading}
+                    loadingText="Processing..."
                   isDisabled={cartPrice <= 0 ? true : false}
                   size="lg"
                   colorScheme="green"
                   onClick={() =>
-                    sendEmail({
-                      cost: `£${formattedPrice}`,
-                      prevPoints: "1,620",
-                      newPoints: `${
-                        Math.floor(cartPrice) + Math.floor(loyaltyPoints)
-                      }`,
-                      envPoints: `${Math.floor(loyaltyPoints)}`,
-                      newTotal: `${(
-                        1620 +
-                        (Math.floor(cartPrice) + Math.floor(loyaltyPoints))
-                      )
-                        .toString()
-                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
-                    })
+                    handleCheckout()
                   }
                 >
                   Checkout
