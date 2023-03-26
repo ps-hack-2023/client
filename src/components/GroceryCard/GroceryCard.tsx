@@ -88,13 +88,21 @@ const GroceryCard = (props: any) => {
                     return <EnviromentalTag tag={tag} colour="yellow.600" />;
                   case "EcoPack":
                     return <EnviromentalTag tag={tag} colour="purple.500" />;
+                  case "Reduced":
+                    return <EnviromentalTag tag={tag} colour="orange.900" />;
                   default:
                     break;
                 }
               })}
             </SimpleGrid>
           </Box>
-          <Stack spacing='3px' alignSelf="center" bottom={0} position="absolute" paddingBottom="15px">
+          <Stack
+            spacing="3px"
+            alignSelf="center"
+            bottom={0}
+            position="absolute"
+            paddingBottom="15px"
+          >
             <Text
               lineHeight="1.56"
               fontWeight="bold"
