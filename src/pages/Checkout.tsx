@@ -236,7 +236,7 @@ const Checkout = () => {
                   color="black"
                   textAlign="end"
                 >
-                  1,708
+                  1,500
                 </Text>
               </Stack>
               <Stack
@@ -252,7 +252,7 @@ const Checkout = () => {
                   color="#000000"
                   textAlign="end"
                 >
-                  New loyalty points
+                  New total loyalty points
                 </Text>
                 <Text
                   fontWeight="semibold"
@@ -260,7 +260,7 @@ const Checkout = () => {
                   color="black"
                   textAlign="end"
                 >
-                  +56
+                  +258
                 </Text>
               </Stack>
               <Stack
@@ -276,7 +276,7 @@ const Checkout = () => {
                   color="#000000"
                   textAlign="end"
                 >
-                  New sustainability points
+                  Of which from sustainable purchases
                 </Text>
                 <Text
                   fontWeight="semibold"
@@ -284,7 +284,7 @@ const Checkout = () => {
                   color="green.500"
                   textAlign="end"
                 >
-                  +223
+                  +48
                 </Text>
               </Stack>
               <Stack
@@ -311,7 +311,7 @@ const Checkout = () => {
                   color="#000000"
                   textAlign="end"
                 >
-                  1,987
+                  1,758
                 </Text>
               </Stack>
             </Stack>
