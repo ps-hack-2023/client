@@ -11,13 +11,14 @@ import {
   Select,
 } from "@chakra-ui/react";
 import GroceryCard from "../components/GroceryCard/GroceryCard";
-import mockData from "./mockData.json";
+import mockDataRaw from "./mockData.json";
 
 const Groceries = () => {
   const [filterValue, setFilter] = useState("All");
   const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setFilter(event.target.value);
   };
+  const [mockData, setMockData] = useState(mockDataRaw);
 
   useEffect(() => {
     const backendData = {
@@ -25,7 +26,7 @@ const Groceries = () => {
       headers: { "Content-Type": "application/json" },
     };
     fetch("api/product/all", backendData).then((response) =>
-      console.log(response.json())
+      response.json().then((json) => setMockData(json))
     );
   }, []);
 
