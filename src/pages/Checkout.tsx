@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Stack, Text, Button } from "@chakra-ui/react";
 import CheckoutCard from "../components/CheckoutCard/CheckoutCard";
@@ -17,20 +17,15 @@ const Checkout = () => {
   const handleCheckout = () => {
     setLoading(true);
     sendEmail({
-        cost: `£${formattedPrice}`,
-        prevPoints: "1,620",
-        newPoints: `${
-          Math.floor(cartPrice) + Math.floor(loyaltyPoints)
-        }`,
-        envPoints: `${Math.floor(loyaltyPoints)}`,
-        newTotal: `${(
-          1620 +
-          (Math.floor(cartPrice) + Math.floor(loyaltyPoints))
-        )
-          .toString()
-          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
-      })
-  }
+      cost: `£${formattedPrice}`,
+      prevPoints: "1,620",
+      newPoints: `${Math.floor(cartPrice) + Math.floor(loyaltyPoints)}`,
+      envPoints: `${Math.floor(loyaltyPoints)}`,
+      newTotal: `${(1620 + (Math.floor(cartPrice) + Math.floor(loyaltyPoints)))
+        .toString()
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
+    });
+  };
 
   const sendEmail = (params: any) => {
     emailjs
@@ -43,7 +38,6 @@ const Checkout = () => {
         console.log("EMAIL FAILED");
       });
   };
-
 
   return (
     <Stack justify="flex-start" align="flex-start" spacing="25px">
@@ -213,14 +207,12 @@ const Checkout = () => {
                   </Stack>
                 </Stack>
                 <Button
-                    isLoading={loading}
-                    loadingText="Processing..."
+                  isLoading={loading}
+                  loadingText="Processing..."
                   isDisabled={cartPrice <= 0 ? true : false}
                   size="lg"
                   colorScheme="green"
-                  onClick={() =>
-                    handleCheckout()
-                  }
+                  onClick={() => handleCheckout()}
                 >
                   Checkout
                 </Button>
