@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar/NavBar";
 import { Footer } from "./components/Footer";
 import { Main_content } from "./pages/Main_content";
 import Groceries from "./pages/Groceries";
+import Labels from "./pages/Labels";
 import {
   ChakraProvider,
   theme,
@@ -24,6 +25,7 @@ export const App = () => (
           <Route path='/' element={<Main_content />} />
           <Route path='/groceries' element={<Groceries />} />
           <Route path='/checkout' element={<Checkout />} />
+          <Route path='/labels' element={<Labels />} />
         </Routes>
       </GridItem>
       <GridItem colSpan={6} bg="grey.200">

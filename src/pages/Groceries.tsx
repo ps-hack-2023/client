@@ -39,8 +39,8 @@ const Groceries = () => {
           background="#FFFFFF"
         >
           <Text
-            fontWeight="regular"
-            fontSize="29px"
+            fontWeight="bold"
+            fontSize="35px"
             textTransform="uppercase"
             color="#000000"
           >
