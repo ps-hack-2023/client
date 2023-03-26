@@ -3,38 +3,10 @@ import { useDispatch } from "react-redux";
 import { Icon, Stack, SimpleGrid, Button, Box, Text } from "@chakra-ui/react";
 import { IoMdStar, IoMdStarHalf, IoMdStarOutline } from "react-icons/io";
 import { addToCart } from "../../features/feature/cartSlice";
+import EnviromentalTag from "../EnviromentalTag";
 
 const GroceryCard = (props: any) => {
   const dispatch = useDispatch();
-
-  const EnviromentalTag = ({ tag, colour }: any) => {
-    return (
-      <Stack
-        paddingX="2px"
-        borderRadius="7px"
-        direction="row"
-        justify="flex-start"
-        align="flex-start"
-        spacing="10px"
-        borderColor={colour}
-        borderStartWidth="1px"
-        borderEndWidth="1px"
-        borderTopWidth="1px"
-        borderBottomWidth="1px"
-      >
-        <Text
-          lineHeight="1.82"
-          fontWeight="regular"
-          fontSize="11px"
-          textTransform="uppercase"
-          color={colour}
-          margin="auto"
-        >
-          {tag}
-        </Text>
-      </Stack>
-    );
-  };
 
   return (
     <Box
