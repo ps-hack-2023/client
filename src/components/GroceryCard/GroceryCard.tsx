@@ -115,7 +115,7 @@ const GroceryCard = (props: any) => {
               <Button
                 onClick={() =>
                   dispatch(
-                    addToCart({ price: props.price, item: props.itemId })
+                    addToCart({ price: props.price, item: props.itemId, tags: props.tags.length})
                   )
                 }
                 size="lg"

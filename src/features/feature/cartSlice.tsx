@@ -6,11 +6,13 @@ interface CartItems {
 
 interface CartState {
   cartPrice: number;
+  loyaltyPoints: number;
   cartItems: CartItems;
 }
 
 const initialState: CartState = {
   cartPrice: 0,
+  loyaltyPoints: 0,
   cartItems: {},
 };
 
@@ -20,6 +22,9 @@ const cartSlice = createSlice({
   reducers: {
     addToCart: (state, { payload }) => {
       state.cartPrice = state.cartPrice + parseFloat(payload.price);
+
+      state.loyaltyPoints = state.loyaltyPoints + ((payload.tags * 0.2) * payload.price)
+      console.log(state.loyaltyPoints)
 
       if (state.cartItems.hasOwnProperty(payload.item)) {
         state.cartItems = {
@@ -35,10 +40,13 @@ const cartSlice = createSlice({
     },
     emptyCart: (state) => {
       state.cartPrice = 0;
+      state.loyaltyPoints = 0;
       state.cartItems = {};
     },
     removeFromCart: (state, { payload }) => {
       state.cartPrice = state.cartPrice - parseFloat(payload.price);
+
+      state.loyaltyPoints = state.loyaltyPoints - ((payload.tags * 0.2) * payload.price)
 
       if (state.cartItems[payload.item] === 1) {
         delete state.cartItems[payload.item]

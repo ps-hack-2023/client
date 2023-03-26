@@ -89,6 +89,7 @@ const CheckoutCard = (props: any) => {
                 addToCart({
                   price: props.item.price,
                   item: props.item.productID,
+                  tags: props.item.tags.length,
                 })
               )
             }
@@ -99,6 +100,7 @@ const CheckoutCard = (props: any) => {
                 removeFromCart({
                   price: props.item.price,
                   item: props.item.productID,
+                  tags: props.item.tags.length,
                 })
               )
             }
