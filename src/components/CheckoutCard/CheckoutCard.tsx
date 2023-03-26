@@ -3,6 +3,7 @@ import {
   Stack,
   Text,
   Box,
+  HStack,
   NumberInput,
   NumberInputField,
   NumberInputStepper,
@@ -80,43 +81,48 @@ const CheckoutCard = (props: any) => {
           </Stack>
         </Stack>
       </Stack>
-      <NumberInput defaultValue={props.quantity} size="lg" width="100px">
-        <NumberInputField background="#FFFFFF" />
-        <NumberInputStepper background="white">
-          <NumberIncrementStepper
-            onClick={() =>
-              dispatch(
-                addToCart({
-                  price: props.item.price,
-                  item: props.item.productID,
-                  tags: props.item.tags.length,
-                })
-              )
-            }
-          />
-          <NumberDecrementStepper
-            onClick={() =>
-              dispatch(
-                removeFromCart({
-                  price: props.item.price,
-                  item: props.item.productID,
-                  tags: props.item.tags.length,
-                })
-              )
-            }
-          />
-        </NumberInputStepper>
-      </NumberInput>
-      <Text
-        lineHeight="0.83"
-        fontWeight="bold"
-        fontSize="24px"
-        textTransform="capitalize"
-        color="#000000"
-      >
-        £
-        {(Math.round(props.item.price * props.quantity * 100) / 100).toFixed(2)}
-      </Text>
+      <HStack>
+        <NumberInput defaultValue={props.quantity} size="lg" width="100px">
+          <NumberInputField background="#FFFFFF" />
+          <NumberInputStepper background="white">
+            <NumberIncrementStepper
+              onClick={() =>
+                dispatch(
+                  addToCart({
+                    price: props.item.price,
+                    item: props.item.productID,
+                    tags: props.item.tags.length,
+                  })
+                )
+              }
+            />
+            <NumberDecrementStepper
+              onClick={() =>
+                dispatch(
+                  removeFromCart({
+                    price: props.item.price,
+                    item: props.item.productID,
+                    tags: props.item.tags.length,
+                  })
+                )
+              }
+            />
+          </NumberInputStepper>
+        </NumberInput>
+        <Text
+          lineHeight="0.83"
+          fontWeight="bold"
+          fontSize="24px"
+          textTransform="capitalize"
+          color="#000000"
+          width="100px"
+        >
+          £
+          {(Math.round(props.item.price * props.quantity * 100) / 100).toFixed(
+            2
+          )}
+        </Text>
+      </HStack>
     </Stack>
   );
 };
