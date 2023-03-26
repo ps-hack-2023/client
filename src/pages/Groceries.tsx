@@ -3,16 +3,15 @@ import { useState } from "react";
 import {
   ChakraProvider,
   theme,
-  Grid,
   SimpleGrid,
   Stack,
   Text,
   Box,
   Flex,
-  Spacer,
   Select,
 } from "@chakra-ui/react";
 import GroceryCard from "../components/GroceryCard/GroceryCard";
+import mockData from "./mockData.json";
 
 const Groceries = () => {
   const [filterValue, setFilter] = useState("All");
@@ -53,10 +52,7 @@ const Groceries = () => {
             <Text fontSize="20px" paddingBottom="10px">
               Sustainability Filter:
             </Text>
-            <Select
-              value={filterValue}
-              onChange={handleFilterChange}
-            >
+            <Select value={filterValue} onChange={handleFilterChange}>
               <option value={"All"}>All</option>
               <option value={"Organic"}>Organic</option>
               <option value={"Local"}>Local</option>
@@ -83,68 +79,22 @@ const Groceries = () => {
               );
             })}
         </SimpleGrid>
+        {mockData.filter((item: any) => {
+          return item.tags.includes(filterValue) || filterValue === "All";
+        }).length === 0 && (
+          <Text
+            lineHeight="0.83"
+            fontWeight="bold"
+            fontSize="20px"
+            color="#000000"
+            alignSelf={"center"}
+          >
+            No items to display
+          </Text>
+        )}
       </Box>
     </ChakraProvider>
   );
 };
-
-const mockData = [
-  {
-    productID: "ff1",
-    productName: "Shop.com Mixed Peppers",
-    amount: "3pk",
-    price: "1.45",
-    tags: ["Local", "Organic"],
-  },
-  {
-    productID: "ff2",
-    productName: "Shop.com Red Pepper",
-    amount: "each",
-    price: "0.60",
-    tags: ["Local", "EcoPack"],
-  },
-  {
-    productID: "ff2",
-    productName: "Shop.com Red Pepper",
-    amount: "each",
-    price: "0.60",
-    tags: ["Local", "EcoPack", "Seasonal", "Organic"],
-  },
-  {
-    productID: "ff2",
-    productName: "Shop.com Red Pepper",
-    amount: "each",
-    price: "0.60",
-    tags: ["Local", "EcoPack"],
-  },
-  {
-    productID: "ff2",
-    productName: "Shop.com Red Pepper",
-    amount: "each",
-    price: "0.60",
-    tags: ["Local", "EcoPack"],
-  },
-  {
-    productID: "ff2",
-    productName: "Shop.com Red Pepper",
-    amount: "each",
-    price: "0.60",
-    tags: ["Local", "EcoPack"],
-  },
-  {
-    productID: "ff2",
-    productName: "Shop.com Red Pepper",
-    amount: "each",
-    price: "0.60",
-    tags: ["Local", "EcoPack"],
-  },
-  {
-    productID: "ff2",
-    productName: "Shop.com Red Pepper",
-    amount: "each",
-    price: "0.60",
-    tags: ["Local", "EcoPack"],
-  },
-];
 
 export default Groceries;

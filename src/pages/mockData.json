@@ -1,0 +1,88 @@
+[
+    {
+      "productID": "ff1",
+      "productName": "Shop.com Mixed Peppers",
+      "amount": "3pk",
+      "price": "1.45",
+      "tags": ["Local", "Organic"]
+    },
+    {
+      "productID": "ff2",
+      "productName": "Shop.com Organic Bananas",
+      "amount": "1kg",
+      "price": "2.99",
+      "tags": ["Organic", "Seasonal"]
+    },
+  
+    {
+      "productID": "ff3",
+      "productName": "Shop.com Fairtrade Coffee",
+      "amount": "500g",
+      "price": "7.99",
+      "tags": ["Fairtrade", "Local", "Organic"]
+    },
+  
+    {
+      "productID": "ff4",
+      "productName": "Shop.com Local Tomatoes",
+      "amount": "500g",
+      "price": "1.99",
+      "tags": ["Local", "EcoPack"]
+    },
+  
+    {
+      "productID": "ff5",
+      "productName": "Shop.com Seasonal Apples",
+      "amount": "1kg",
+      "price": "3.49",
+      "tags": ["Seasonal", "Local"]
+    },
+  
+    {
+      "productID": "ff6",
+      "productName": "Shop.com Organic Carrots",
+      "amount": "500g",
+      "price": "1.99",
+      "tags": ["Organic", "Fairtrade"]
+    },
+  
+    {
+      "productID": "ff7",
+      "productName": "Shop.com EcoPack Chips",
+      "amount": "200g",
+      "price": "2.49",
+      "tags": ["EcoPack", "Local", "Organic"]
+    },
+  
+    {
+      "productID": "ff8",
+      "productName": "Shop.com Local Honey",
+      "amount": "250g",
+      "price": "4.99",
+      "tags": ["Local", "Fairtrade"]
+    },
+  
+    {
+      "productID": "ff9",
+      "productName": "Shop.com Fairtrade Chocolate",
+      "amount": "100g",
+      "price": "2.99",
+      "tags": ["Fairtrade", "EcoPack", "Seasonal"]
+    },
+  
+    {
+      "productID": "ff10",
+      "productName": "Shop.com Organic Salad",
+      "amount": "200g",
+      "price": "3.99",
+      "tags": ["Organic", "Local"]
+    },
+  
+    {
+      "productID": "ff11",
+      "productName": "Shop.com Seasonal Oranges",
+      "amount": "1kg",
+      "price": "4.99",
+      "tags": ["Seasonal", "Fairtrade", "EcoPack"]
+    }
+  ]

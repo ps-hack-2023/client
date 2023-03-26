@@ -11,6 +11,7 @@ import {
   GridItem,
 } from "@chakra-ui/react";
 import { Route, Routes } from "react-router-dom";
+import Checkout from "./pages/Checkout";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
@@ -22,6 +23,7 @@ export const App = () => (
         <Routes>
           <Route path='/' element={<Main_content />} />
           <Route path='/groceries' element={<Groceries />} />
+          <Route path='/checkout' element={<Checkout />} />
         </Routes>
       </GridItem>
       <GridItem colSpan={6} bg="grey.200">

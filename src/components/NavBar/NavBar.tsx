@@ -8,8 +8,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { IoMdCart } from "react-icons/io";
-
-import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import { Link, useMatch, useResolvedPath, useNavigate } from "react-router-dom";
 import navBarItems from "./navBarItems.json";
 import "./navBarStyles.css";
 import { useSelector } from "react-redux";
@@ -17,6 +16,7 @@ import { useSelector } from "react-redux";
 const NavBar = () => {
   const {cartPrice} = useSelector((store: any) => store.cart)
   const formattedPrice = (Math.round(cartPrice * 100) / 100).toFixed(2);
+  const navigate = useNavigate();
 
   const LinkComponent = ({
     to,
@@ -82,6 +82,7 @@ const NavBar = () => {
           </Box>
         </Stack>
         <Button
+        onClick={() => navigate('/checkout')}
           leftIcon={<Icon as={IoMdCart} />}
           variant="outline"
           colorScheme="green"
