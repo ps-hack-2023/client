@@ -20,11 +20,9 @@ const Groceries = () => {
   };
 
   useEffect(() => {
-    // POST request using fetch inside useEffect React hook
     const backendData = {
       method: "GET",
       headers: { "Content-Type": "application/json" },
-      body: "",
     };
     fetch("api/product/all", backendData).then((response) =>
       console.log(response.json())
