@@ -4,6 +4,7 @@ import { Stack, Text, Button } from "@chakra-ui/react";
 import CheckoutCard from "../components/CheckoutCard/CheckoutCard";
 import mockData from "./mockData.json";
 import { emptyCart } from "../features/feature/cartSlice";
+import emailjs from "@emailjs/browser";
 
 const Checkout = () => {
   const { cartPrice, cartItems, loyaltyPoints } = useSelector(
@@ -11,6 +12,17 @@ const Checkout = () => {
   );
   const formattedPrice = (Math.round(cartPrice * 100) / 100).toFixed(2);
   const dispatch = useDispatch();
+
+  const sendEmail = (params: any) => {
+    emailjs
+      .send("service_dtcbvhy", "template_itzoj8a", params, "4-xGrZKKpvjQQC3s8")
+      .then((res) => {
+        dispatch(emptyCart());
+      })
+      .catch((err) => {
+        console.log("EMAIL FAILED");
+      });
+  };
 
   return (
     <Stack justify="flex-start" align="flex-start" spacing="25px">
@@ -179,7 +191,27 @@ const Checkout = () => {
                     </Text>
                   </Stack>
                 </Stack>
-                <Button size="lg" colorScheme="green">
+                <Button
+                  isDisabled={cartPrice <= 0 ? true : false}
+                  size="lg"
+                  colorScheme="green"
+                  onClick={() =>
+                    sendEmail({
+                      cost: `£${formattedPrice}`,
+                      prevPoints: "1,620",
+                      newPoints: `${
+                        Math.floor(cartPrice) + Math.floor(loyaltyPoints)
+                      }`,
+                      envPoints: `${Math.floor(loyaltyPoints)}`,
+                      newTotal: `${(
+                        1620 +
+                        (Math.floor(cartPrice) + Math.floor(loyaltyPoints))
+                      )
+                        .toString()
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`,
+                    })
+                  }
+                >
                   Checkout
                 </Button>
               </Stack>
