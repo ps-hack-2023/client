@@ -1,8 +1,12 @@
 import "@fontsource/raleway/400.css";
 import React from "react";
 import { ChakraProvider, Stack, theme, Box, Button, Text } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
-export const Main_content = () => (
+export const Main_content = () => {
+  const navigate = useNavigate();
+
+  return (
   <ChakraProvider theme={theme}>
     <Box paddingTop="50px" margin="auto" width="50%" zIndex={-1}>
       <img src={require("../res/images/store.jpg")} />
@@ -59,10 +63,10 @@ export const Main_content = () => (
             Our purpose is to nourish people and the planet.{" "}
           </Text>
         </Stack>
-        <Button size="lg" colorScheme="green">
+        <Button size="lg" colorScheme="green" onClick={() => navigate('/groceries')}>
           Discover More
         </Button>
       </Stack>
     </Stack>
-  </ChakraProvider>
-);
+  </ChakraProvider>)
+};
