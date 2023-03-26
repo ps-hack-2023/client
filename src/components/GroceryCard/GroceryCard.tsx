@@ -10,7 +10,7 @@ const GroceryCard = (props: any) => {
 
   return (
     <Box
-      position={"relative"}
+      position="relative"
       width="200px"
       border="1px"
       padding="10px"
@@ -74,7 +74,7 @@ const GroceryCard = (props: any) => {
               </Text>
             </Stack>
           </Stack>
-          <Box alignSelf={"center"} paddingBottom="5px">
+          <Box alignSelf={"center"} paddingBottom="100px">
             <SimpleGrid columns={2} spacing={2}>
               {props.tags.map((tag: string) => {
                 switch (tag) {
@@ -94,28 +94,31 @@ const GroceryCard = (props: any) => {
               })}
             </SimpleGrid>
           </Box>
-          <Text
-            lineHeight="1.56"
-            fontWeight="bold"
-            fontSize="18px"
-            color="#000000"
-            paddingBottom="50px"
-          >
-            £{props.price}
-          </Text>
-          <Box alignSelf={"center"} position="absolute" bottom={"10px"}>
-            <Button
-              onClick={() =>
-                dispatch(addToCart({ price: props.price, item: props.itemId }))
-              }
-              size="lg"
-              variant="outline"
-              width="150px"
-              height="48px"
+          <Stack spacing='3px' alignSelf="center" bottom={0} position="absolute" paddingBottom="15px">
+            <Text
+              lineHeight="1.56"
+              fontWeight="bold"
+              fontSize="18px"
+              color="#000000"
             >
-              Add
-            </Button>
-          </Box>
+              £{props.price}
+            </Text>
+            <Box>
+              <Button
+                onClick={() =>
+                  dispatch(
+                    addToCart({ price: props.price, item: props.itemId })
+                  )
+                }
+                size="lg"
+                variant="outline"
+                width="150px"
+                height="48px"
+              >
+                Add
+              </Button>
+            </Box>
+          </Stack>
         </Stack>
       </Stack>
     </Box>
