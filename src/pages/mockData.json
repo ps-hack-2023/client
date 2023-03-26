@@ -1,14 +1,14 @@
 [
     {
       "productID": "ff1",
-      "productName": "Shop.com Mixed Peppers",
+      "productName": "Mixed Peppers",
       "amount": "3pk",
       "price": "1.45",
-      "tags": ["Local", "Organic"]
+      "tags": ["Organic"]
     },
     {
       "productID": "ff2",
-      "productName": "Shop.com Organic Bananas",
+      "productName": "Organic Bananas",
       "amount": "1kg",
       "price": "2.99",
       "tags": ["Organic", "Seasonal"]
@@ -16,7 +16,7 @@
   
     {
       "productID": "ff3",
-      "productName": "Shop.com Fairtrade Coffee",
+      "productName": "Fairtrade Coffee",
       "amount": "500g",
       "price": "7.99",
       "tags": ["Fairtrade", "Local", "Organic"]
@@ -24,7 +24,7 @@
   
     {
       "productID": "ff4",
-      "productName": "Shop.com Local Tomatoes",
+      "productName": "Local Tomatoes",
       "amount": "500g",
       "price": "1.99",
       "tags": ["Local", "EcoPack"]
@@ -32,23 +32,31 @@
   
     {
       "productID": "ff5",
-      "productName": "Shop.com Seasonal Apples",
+      "productName": "Seasonal Apples",
       "amount": "1kg",
       "price": "3.49",
-      "tags": ["Seasonal", "Local"]
+      "tags": ["Seasonal"]
     },
   
     {
       "productID": "ff6",
-      "productName": "Shop.com Organic Carrots",
+      "productName": "Carrots",
       "amount": "500g",
       "price": "1.99",
-      "tags": ["Organic", "Fairtrade"]
+      "tags": []
+    },
+
+    {
+      "productID": "ff12",
+      "productName": "Organic Carrots",
+      "amount": "500g",
+      "price": "1.99",
+      "tags": ["Organic"]
     },
   
     {
       "productID": "ff7",
-      "productName": "Shop.com EcoPack Chips",
+      "productName": "EcoPack Chips",
       "amount": "200g",
       "price": "2.49",
       "tags": ["EcoPack", "Local", "Organic"]
@@ -56,23 +64,23 @@
   
     {
       "productID": "ff8",
-      "productName": "Shop.com Local Honey",
+      "productName": "Honey",
       "amount": "250g",
       "price": "4.99",
-      "tags": ["Local", "Fairtrade"]
+      "tags": []
     },
   
     {
       "productID": "ff9",
-      "productName": "Shop.com Fairtrade Chocolate",
+      "productName": "Fairtrade Chocolate",
       "amount": "100g",
       "price": "2.99",
-      "tags": ["Fairtrade", "EcoPack", "Seasonal"]
+      "tags": ["Fairtrade", "EcoPack"]
     },
   
     {
       "productID": "ff10",
-      "productName": "Shop.com Organic Salad",
+      "productName": "Organic Salad",
       "amount": "200g",
       "price": "3.99",
       "tags": ["Organic", "Local"]
@@ -80,7 +88,7 @@
   
     {
       "productID": "ff11",
-      "productName": "Shop.com Seasonal Oranges",
+      "productName": "Seasonal Oranges",
       "amount": "1kg",
       "price": "4.99",
       "tags": ["Seasonal", "Fairtrade", "EcoPack"]

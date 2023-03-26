@@ -6,7 +6,9 @@ import mockData from "./mockData.json";
 import { emptyCart } from "../features/feature/cartSlice";
 
 const Checkout = () => {
-  const { cartPrice, cartItems } = useSelector((store: any) => store.cart);
+  const { cartPrice, cartItems, loyaltyPoints } = useSelector(
+    (store: any) => store.cart
+  );
   const formattedPrice = (Math.round(cartPrice * 100) / 100).toFixed(2);
   const dispatch = useDispatch();
 
@@ -236,7 +238,7 @@ const Checkout = () => {
                   color="black"
                   textAlign="end"
                 >
-                  1,500
+                  1,620
                 </Text>
               </Stack>
               <Stack
@@ -260,7 +262,9 @@ const Checkout = () => {
                   color="black"
                   textAlign="end"
                 >
-                  +258
+                  {cartPrice != 0 || cartPrice < 0
+                    ? "+" + (Math.floor(cartPrice) + Math.floor(loyaltyPoints))
+                    : 0}
                 </Text>
               </Stack>
               <Stack
@@ -284,7 +288,7 @@ const Checkout = () => {
                   color="green.500"
                   textAlign="end"
                 >
-                  +48
+                  {Math.floor(loyaltyPoints)}
                 </Text>
               </Stack>
               <Stack
@@ -311,7 +315,14 @@ const Checkout = () => {
                   color="#000000"
                   textAlign="end"
                 >
-                  1,758
+                  {cartPrice != 0 || cartPrice < 0
+                    ? (
+                        1620 +
+                        (Math.floor(cartPrice) + Math.floor(loyaltyPoints))
+                      )
+                        .toString()
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                    : "1,620"}
                 </Text>
               </Stack>
             </Stack>
