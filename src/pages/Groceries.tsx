@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   ChakraProvider,
   theme,
@@ -18,6 +18,18 @@ const Groceries = () => {
   const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setFilter(event.target.value);
   };
+
+  useEffect(() => {
+    // POST request using fetch inside useEffect React hook
+    const backendData = {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+      body: "",
+    };
+    fetch("api/product/all", backendData).then((response) =>
+      console.log(response.json())
+    );
+  }, []);
 
   return (
     <ChakraProvider theme={theme}>
