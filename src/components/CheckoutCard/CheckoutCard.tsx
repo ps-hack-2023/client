@@ -70,6 +70,8 @@ const CheckoutCard = (props: any) => {
                     return <EnviromentalTag tag={tag} colour="yellow.600" />;
                   case "EcoPack":
                     return <EnviromentalTag tag={tag} colour="purple.500" />;
+                  case "Reduced":
+                    return <EnviromentalTag tag={tag} colour="orange.900" />;
                   default:
                     break;
                 }
