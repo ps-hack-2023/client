@@ -26,7 +26,10 @@ const Groceries = () => {
       headers: { "Content-Type": "application/json" },
     };
     fetch("api/product/all", backendData).then((response) =>
-      response.json().then((json) => setMockData(json))
+      response
+        .json()
+        .then((json) => setMockData(json))
+        .catch((err) => console.log(err))
     );
   }, []);
 
@@ -81,11 +84,11 @@ const Groceries = () => {
             .map((item: any) => {
               return (
                 <GroceryCard
-                  productName={item.productName}
-                  amount={item.amount}
+                  productName={item.name}
+                  amount={item.type}
                   price={item.price}
                   tags={item.tags}
-                  itemId={item.productID}
+                  itemId={item.id}
                 />
               );
             })}

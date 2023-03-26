@@ -42,7 +42,7 @@ const CheckoutCard = (props: any) => {
               color="#000000"
               textAlign="end"
             >
-              {props.item.productName}
+              {props.item.name}
             </Text>
             <Text
               fontWeight="regular"
@@ -51,7 +51,7 @@ const CheckoutCard = (props: any) => {
               color="#000000"
               textAlign="end"
             >
-              {props.item.amount}
+              {props.item.type}
             </Text>
             <Stack
               direction="row"
@@ -90,7 +90,7 @@ const CheckoutCard = (props: any) => {
                 dispatch(
                   addToCart({
                     price: props.item.price,
-                    item: props.item.productID,
+                    item: props.item.id,
                     tags: props.item.tags.length,
                   })
                 )
@@ -101,7 +101,7 @@ const CheckoutCard = (props: any) => {
                 dispatch(
                   removeFromCart({
                     price: props.item.price,
-                    item: props.item.productID,
+                    item: props.item.id,
                     tags: props.item.tags.length,
                   })
                 )

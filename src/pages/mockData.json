@@ -1,95 +1,95 @@
 [
     {
-      "productID": "ff1",
-      "productName": "Mixed Peppers",
-      "amount": "3pk",
+      "id": "ff1",
+      "name": "Mixed Peppers",
+      "type": "3pk",
       "price": "1.45",
       "tags": ["Organic"]
     },
     {
-      "productID": "ff2",
-      "productName": "Organic Bananas",
-      "amount": "1kg",
+      "id": "ff2",
+      "name": "Organic Bananas",
+      "type": "1kg",
       "price": "2.99",
       "tags": ["Organic", "Seasonal"]
     },
   
     {
-      "productID": "ff3",
-      "productName": "Fairtrade Coffee",
-      "amount": "500g",
+      "id": "ff3",
+      "name": "Fairtrade Coffee",
+      "type": "500g",
       "price": "7.99",
       "tags": ["Fairtrade", "Local", "Organic"]
     },
   
     {
-      "productID": "ff4",
-      "productName": "Local Tomatoes",
-      "amount": "500g",
+      "id": "ff4",
+      "name": "Local Tomatoes",
+      "type": "500g",
       "price": "1.99",
       "tags": ["Local", "EcoPack"]
     },
   
     {
-      "productID": "ff5",
-      "productName": "Seasonal Apples",
-      "amount": "1kg",
+      "id": "ff5",
+      "name": "Seasonal Apples",
+      "type": "1kg",
       "price": "3.49",
       "tags": ["Seasonal"]
     },
   
     {
-      "productID": "ff6",
-      "productName": "Carrots",
-      "amount": "500g",
+      "id": "ff6",
+      "name": "Carrots",
+      "type": "500g",
       "price": "1.99",
       "tags": []
     },
 
     {
-      "productID": "ff12",
-      "productName": "Organic Carrots",
-      "amount": "500g",
+      "id": "ff12",
+      "name": "Organic Carrots",
+      "type": "500g",
       "price": "1.99",
       "tags": ["Organic"]
     },
   
     {
-      "productID": "ff7",
-      "productName": "EcoPack Chips",
-      "amount": "200g",
+      "id": "ff7",
+      "name": "EcoPack Chips",
+      "type": "200g",
       "price": "2.49",
       "tags": ["EcoPack", "Local", "Organic"]
     },
   
     {
-      "productID": "ff8",
-      "productName": "Honey",
-      "amount": "250g",
+      "id": "ff8",
+      "name": "Honey",
+      "type": "250g",
       "price": "4.99",
       "tags": []
     },
   
     {
-      "productID": "ff9",
-      "productName": "Fairtrade Chocolate",
-      "amount": "100g",
+      "id": "ff9",
+      "name": "Fairtrade Chocolate",
+      "type": "100g",
       "price": "2.99",
       "tags": ["Fairtrade", "EcoPack"]
     },
   
     {
-      "productID": "ff10",
-      "productName": "Organic Salad",
-      "amount": "200g",
+      "id": "ff10",
+      "name": "Organic Salad",
+      "type": "200g",
       "price": "3.99",
       "tags": ["Organic", "Local"]
     },
   
     {
-      "productID": "ff11",
-      "productName": "Seasonal Oranges",
-      "amount": "1kg",
+      "id": "ff11",
+      "name": "Seasonal Oranges",
+      "type": "1kg",
       "price": "4.99",
       "tags": ["Seasonal", "Fairtrade", "EcoPack"]
     }

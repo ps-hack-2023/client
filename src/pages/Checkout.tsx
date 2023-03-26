@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Stack, Text, Button } from "@chakra-ui/react";
 import CheckoutCard from "../components/CheckoutCard/CheckoutCard";
-import mockData from "./mockData.json";
+import mockDataRaw from "./mockData.json";
 import { emptyCart } from "../features/feature/cartSlice";
 import emailjs from "@emailjs/browser";
 
@@ -13,6 +13,21 @@ const Checkout = () => {
   const formattedPrice = (Math.round(cartPrice * 100) / 100).toFixed(2);
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
+
+
+  const [mockData, setMockData] = useState(mockDataRaw);
+  useEffect(() => {
+    const backendData = {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    };
+    fetch("api/product/all", backendData).then((response) =>
+      response
+        .json()
+        .then((json) => setMockData(json))
+        .catch((err) => console.log(err))
+    );
+  }, []);
 
   const handleCheckout = () => {
     setLoading(true);
@@ -96,7 +111,7 @@ const Checkout = () => {
               {Object.keys(cartItems).map((key) => {
                 return (
                   <CheckoutCard
-                    item={mockData.find((product) => product.productID === key)}
+                    item={mockData.find((product) => product.id === key)}
                     quantity={cartItems[key]}
                   />
                 );
