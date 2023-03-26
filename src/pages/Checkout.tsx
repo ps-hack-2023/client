@@ -14,7 +14,6 @@ const Checkout = () => {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
 
-
   const [mockData, setMockData] = useState(mockDataRaw);
   useEffect(() => {
     const backendData = {

@@ -16,6 +16,8 @@ import { addToCart, removeFromCart } from "../../features/feature/cartSlice";
 
 const CheckoutCard = (props: any) => {
   const dispatch = useDispatch();
+  console.log(JSON.stringify(props.item))
+  console.log(JSON.stringify(props.item.name))
 
   return (
     <Stack
